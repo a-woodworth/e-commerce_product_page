@@ -1,44 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Collections
-  Men
-  Women
-  About
-  Contact
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="main-header">
+          <div class="nav-wrapper">
+            <div class="logo">
+              <a href="/index.html" class="logo__link">
+                <img
+                  src="images/logo.svg"
+                  alt="Sneakers Logo. Click for home."
+                />
+              </a>
+            </div>
+            <nav class="main-nav" aria-label>
+              <ul class="main-nav-list">
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link">Collections</a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link">Men</a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link">Women</a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link">About</a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="#" class="main-nav__link">Contact</a>
+                </li>
+              </ul>
+              <span id="nav-label" hidden>Toggle navigation</span>
+              <template id="burger-template">
+                <button
+                  class="btn-icon mobile-nav__open"
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-labelledby="nav-label"
+                >
+                  <svg
+                    aria-hidden="true"
+                    width="16"
+                    height="15"
+                    viewBox="0 0 16 15"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0 0H16V3H0V0ZM0 6H16V9H0V6ZM16 12H0V15H16V12Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </template>
+              <template id="close-menu-template">
+                <button
+                  class="btn-icon mobile-nav__close hidden"
+                  type="button"
+                  aria-label="close menu"
+                >
+                  <svg
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M6.71751 4.59619L2.12132 0L0 2.12132L4.59619 6.71751L0 11.3137L2.12132 13.435L6.71751 8.83883L11.3137 13.435L13.435 11.3137L8.83883 6.71751L13.435 2.12132L11.3137 0L6.71751 4.59619Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </template>
+            </nav>
+          </div>
+          <div class="nav-tools">
+            <div class="cart"></div>
+            <div class="account"></div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="featured">
+          <div class="featured-images"></div>
+          <h1>Sneaker Company</h1>
+          <div class="featured-product">
+            <h2 class="featured-product__title">
+              Fall Limited Edition Sneakers
+            </h2>
+            <p class="featured-product__text">
+              These low-profile sneakers are your perfect casual wear
+              companion. Featuring a durable rubber outer sole,
+              they’ll withstand everything the weather can offer.
+            </p>
+          </div>
+          <div class="featured-product__price">
+            <div class="price-wrapper">
+              <span class="featured-product__price--current">
+                $125.00
+              </span>
+              <span class="featured-product__price--discount">
+                50%
+              </span>
+            </div>
+            <span class="featured-product__price--original">
+              <s>$250.00</s>
+            </span>
+          </div>
+          <div class="featured-product__actions">
+            <form>
+              <div class="quantity">
+                <button type="button" class="icon-decrease"></button>
+                <input type="text" name="quantity" value="0" />
+                <button type="button" class="icon-increase"></button>
+              </div>
+              <input
+                type="hidden"
+                name="product-id"
+                value="Fall Limited Edition Sneakers"
+              />
+              <input type="hidden" name="amount" value="125.00" />
+              <input type="hidden" name="currency_code" value="USD" />
+              <button type="submit" class="btn btn--primary">
+                <img
+                  src="images/icon-cart.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                Add to cart
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+      <footer class="main-footer">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge"
+            >Frontend Mentor</a
+          >. Coded by
+          <a href="https://github.com/a-woodworth">a-woodworth</a>.
+        </p>
+      </footer>
+    </div>
+  </body>
 </html>
