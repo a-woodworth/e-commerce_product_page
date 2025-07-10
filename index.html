@@ -58,6 +58,7 @@
                 >
                   <svg
                     aria-hidden="true"
+                    focusable="false"
                     width="16"
                     height="15"
                     viewBox="0 0 16 15"
@@ -81,6 +82,7 @@
                 >
                   <svg
                     aria-hidden="true"
+                    focusable="false"
                     width="14"
                     height="14"
                     viewBox="0 0 14 14"
@@ -99,7 +101,101 @@
             </nav>
           </div>
           <div class="nav-tools">
-            <div class="cart"></div>
+            <div class="cart">
+              <button
+                id="cart-button"
+                type="button"
+                aria-label="View Shopping Cart"
+              >
+                <span class="cart-badge">
+                  <span class="cart-quantity">0</span>
+                  <span class="sr-only">items in cart</span>
+                </span>
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  width="22"
+                  height="20"
+                  viewBox="0 0 22 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.04193 3.64139H21.1034C21.6865 3.64139 22.114 4.19014 21.9729 4.75489L20.152 12.0381C20.0569 12.4181 19.7261 12.6924 19.3351 12.7153L5.01332 13.557C5.26937 14.1554 5.86258 14.5661 6.54332 14.5661H16.5515C18.0497 14.5661 19.2685 15.7849 19.2685 17.2831C19.2685 18.7812 18.0497 20 16.5515 20C14.6743 20 13.3546 18.1275 13.9968 16.3584H9.092C9.73505 18.1298 8.41245 20 6.53726 20C4.27796 20 3.00891 17.3851 4.39783 15.6114C3.62748 15.0012 3.18029 14.1031 3.10715 13.2755C1.97229 0.631508 2.02178 1.18296 2.128 2.36648L2.12801 2.36663L2.12809 2.36744C2.19949 3.1631 2.29639 4.24273 2.07644 1.79232H1.07496C0.580026 1.79232 0.178802 1.39109 0.178802 0.896159C0.178802 0.401223 0.580026 0 1.07496 0H2.89574C3.35961 0 3.74684 0.354025 3.78832 0.816059L4.04193 3.64139ZM5.61268 17.2831C5.61268 17.7929 6.02748 18.2077 6.53726 18.2077C7.04709 18.2077 7.46188 17.7929 7.46188 17.2831C7.46188 16.7732 7.04709 16.3584 6.53726 16.3584C6.02748 16.3584 5.61268 16.7732 5.61268 17.2831ZM16.5515 18.2077C16.0417 18.2077 15.6269 17.7929 15.6269 17.2831C15.6269 16.7732 16.0417 16.3584 16.5515 16.3584C17.0613 16.3584 17.4761 16.7732 17.4761 17.2831C17.4761 17.7929 17.0613 18.2077 16.5515 18.2077ZM4.77209 11.7758L18.5728 10.9648L19.9557 5.43367H4.20281L4.77209 11.7758Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+              <div id="cart-popup" class="hidden">
+                <h2>Cart</h2>
+                <div class="cart-contents">
+                  <p class="cart-empty">Your cart is empty.</p>
+                  <div class="cart-item hidden">
+                    <img
+                      class="cart-item__image"
+                      src="images/image-product-1-thumbnail.jpg"
+                      alt=""
+                    />
+                    <div class="cart-item-wrapper">
+                      <p class="cart-item__title">
+                        Fall Limited Edition Sneakers
+                      </p>
+                      <p class="cart-item__price">
+                        $125.00 x
+                        <span class="cart-item__quantity">3</span>
+                        <span class="cart-item__total"
+                          ><strong>$375.00</strong></span
+                        >
+                      </p>
+                      <button
+                        class="cart-item__remove"
+                        type="button"
+                        aria-label="Remove item from cart"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          width="15"
+                          height="16"
+                          viewBox="0 0 15 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0.5 2.625V1.75C0.5 1.33438 0.834375 1 1.25 1H4.75L5.04375 0.415625C5.16875 0.159375 5.42812 0 5.7125 0H9.28438C9.56875 0 9.82812 0.159375 9.95625 0.415625L10.25 1H13.75C14.1656 1 14.5 1.33438 14.5 1.75V2.625C14.5 2.83125 14.3313 3 14.125 3H0.875C0.66875 3 0.5 2.83125 0.5 2.625ZM13.5 4.375V14.5C13.5 15.3281 12.8281 16 12 16H3C2.17188 16 1.5 15.3281 1.5 14.5V4.375C1.5 4.16875 1.66875 4 1.875 4H13.125C13.3313 4 13.5 4.16875 13.5 4.375ZM4.5 6C4.775 6 5 6.225 5 6.5V13.5C5 13.775 4.775 14 4.5 14C4.225 14 4 13.775 4 13.5V6.5C4 6.225 4.225 6 4.5 6ZM8 6.5C8 6.225 7.775 6 7.5 6C7.225 6 7 6.225 7 6.5V13.5C7 13.775 7.225 14 7.5 14C7.775 14 8 13.775 8 13.5V6.5ZM10.5 6C10.775 6 11 6.225 11 6.5V13.5C11 13.775 10.775 14 10.5 14C10.225 14 10 13.775 10 13.5V6.5C10 6.225 10.225 6 10.5 6Z"
+                            fill="currentColor"
+                          />
+                          <mask
+                            id="mask0_6068_778"
+                            style="mask-type: luminance"
+                            maskUnits="userSpaceOnUse"
+                            x="0"
+                            y="0"
+                            width="15"
+                            height="16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M0.5 2.625V1.75C0.5 1.33438 0.834375 1 1.25 1H4.75L5.04375 0.415625C5.16875 0.159375 5.42812 0 5.7125 0H9.28438C9.56875 0 9.82812 0.159375 9.95625 0.415625L10.25 1H13.75C14.1656 1 14.5 1.33438 14.5 1.75V2.625C14.5 2.83125 14.3313 3 14.125 3H0.875C0.66875 3 0.5 2.83125 0.5 2.625ZM13.5 4.375V14.5C13.5 15.3281 12.8281 16 12 16H3C2.17188 16 1.5 15.3281 1.5 14.5V4.375C1.5 4.16875 1.66875 4 1.875 4H13.125C13.3313 4 13.5 4.16875 13.5 4.375ZM4.5 6C4.775 6 5 6.225 5 6.5V13.5C5 13.775 4.775 14 4.5 14C4.225 14 4 13.775 4 13.5V6.5C4 6.225 4.225 6 4.5 6ZM8 6.5C8 6.225 7.775 6 7.5 6C7.225 6 7 6.225 7 6.5V13.5C7 13.775 7.225 14 7.5 14C7.775 14 8 13.775 8 13.5V6.5ZM10.5 6C10.775 6 11 6.225 11 6.5V13.5C11 13.775 10.775 14 10.5 14C10.225 14 10 13.775 10 13.5V6.5C10 6.225 10.225 6 10.5 6Z"
+                              fill="white"
+                            />
+                          </mask>
+                          <g mask="url(#mask0_6068_778)"></g>
+                        </svg>
+                      </button>
+                    </div>
+                    <button class="btn btn--primary" type="button">
+                      Checkout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="account"></div>
           </div>
         </div>
@@ -132,20 +228,39 @@
             </span>
           </div>
           <div class="featured-product__actions">
-            <form>
+            <form method="post" action="/cart/add">
               <div class="quantity">
-                <button type="button" class="icon-decrease"></button>
-                <input type="text" name="quantity" value="0" />
-                <button type="button" class="icon-increase"></button>
+                <button type="button" class="icon-decrease">
+                  <span class="sr-only">Decrease quantity</span>
+                </button>
+                <label for="quantity" class="sr-only">Quantity</label>
+                <input
+                  type="text"
+                  id="quantity"
+                  name="quantity"
+                  value="0"
+                />
+                <button type="button" class="icon-increase">
+                  <span class="sr-only">Increase quantity</span>
+                </button>
               </div>
               <input
                 type="hidden"
+                id="product-id"
                 name="product-id"
                 value="Fall Limited Edition Sneakers"
               />
-              <input type="hidden" name="amount" value="125.00" />
-              <input type="hidden" name="currency_code" value="USD" />
-              <button type="submit" class="btn btn--primary">
+              <input
+                type="hidden"
+                id="amount"
+                name="amount"
+                value="0"
+              />
+              <button
+                id="add-to-cart"
+                type="submit"
+                class="btn btn--primary"
+              >
                 <img
                   src="images/icon-cart.svg"
                   alt=""
