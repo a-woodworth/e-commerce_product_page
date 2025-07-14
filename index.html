@@ -189,14 +189,45 @@
                         </svg>
                       </button>
                     </div>
-                    <button class="btn btn--primary" type="button">
+                    <a href="#" class="btn btn--primary">
                       Checkout
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="account"></div>
+            <div class="account">
+              <button
+                id="account-button"
+                type="button"
+                aria-label="View My Account"
+              >
+                <img
+                  src="images/image-avatar.png"
+                  alt="Brioni avatar"
+                />
+              </button>
+              <div id="account-popup" class="account-details hidden">
+                <h2>Account Information</h2>
+                <p class="account-details__greeting">
+                  Welcome back Brioni!
+                </p>
+                <ul class="account-details__list">
+                  <li class="account-details__item">
+                    <a href="#">My Account</a>
+                  </li>
+                  <li class="account-details__item">
+                    <a href="#">Order History</a>
+                  </li>
+                  <li class="account-details__item">
+                    <a href="#">Wishlist</a>
+                  </li>
+                  <li class="account-details__item">
+                    <a href="#">Sign Out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </header>
