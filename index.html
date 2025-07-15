@@ -102,11 +102,7 @@
           </div>
           <div class="nav-tools">
             <div class="cart">
-              <button
-                id="cart-button"
-                type="button"
-                aria-label="View Shopping Cart"
-              >
+              <button id="cart-button" type="button">
                 <span class="cart-badge">
                   <span class="cart-quantity">0</span>
                   <span class="sr-only">items in cart</span>
@@ -200,7 +196,7 @@
               <button
                 id="account-button"
                 type="button"
-                aria-label="View My Account"
+                aria-label="My Account"
               >
                 <img
                   src="images/image-avatar.png"
@@ -214,7 +210,7 @@
                 </p>
                 <ul class="account-details__list">
                   <li class="account-details__item">
-                    <a href="#">My Account</a>
+                    <a href="#">Account Info</a>
                   </li>
                   <li class="account-details__item">
                     <a href="#">Order History</a>
@@ -233,73 +229,155 @@
       </header>
       <main>
         <div class="featured">
-          <div class="featured-images"></div>
-          <h1>Sneaker Company</h1>
-          <div class="featured-product">
-            <h2 class="featured-product__title">
-              Fall Limited Edition Sneakers
-            </h2>
-            <p class="featured-product__text">
-              These low-profile sneakers are your perfect casual wear
-              companion. Featuring a durable rubber outer sole,
-              they’ll withstand everything the weather can offer.
-            </p>
+          <div
+            class="featured-carousel"
+            role="group"
+            aria-label="Product Images"
+            aria-roledescription="carousel"
+          >
+            <div class="featured-carousel__buttons" hidden>
+              <button class="featured-carousel__prev" type="button">
+                <span class="sr-only">previous</span>
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  width="10"
+                  height="14"
+                  viewBox="0 0 10 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.21429 1.28571L2.50001 6.99999L8.21429 12.7143"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  />
+                </svg>
+              </button>
+              <button class="featured-carousel__next" type="button">
+                <span class="sr-only">next</span>
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  width="10"
+                  height="14"
+                  viewBox="0 0 10 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.5 1.28571L7.21429 6.99999L1.5 12.7143"
+                    stroke="currentColor"
+                    stroke-width="3"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="featured-carousel__scrollable">
+              <ul class="featured-carousel__list">
+                <li>
+                  <img
+                    src="images/image-product-1.jpg"
+                    alt="Tan and white leather sneakers with a white rubber sole and white shoelaces"
+                    class="featured-carousel__image"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="images/image-product-2.jpg"
+                    alt="Close up of back of sneakers displays signature orange leather heel accent"
+                    class="featured-carousel__image"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="images/image-product-3.jpg"
+                    alt="Angled view of front of shoe shows how tan leather wraps right up to the white shoelaces"
+                    class="featured-carousel__image"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="images/image-product-4.jpg"
+                    alt="View from side shows detailed white stiching along the shoe's slip-resistant, rubber sole"
+                    class="featured-carousel__image"
+                  />
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="featured-product__price">
-            <div class="price-wrapper">
-              <span class="featured-product__price--current">
-                $125.00
-              </span>
-              <span class="featured-product__price--discount">
-                50%
+          <div class="featured-details">
+            <div class="featured-product">
+              <div class="featured-product__title">
+                <h1>Fall Limited Edition Sneakers</h1>
+                <span class="featured-product__brand">
+                  <a href="#">Sneaker Company</a>
+                </span>
+              </div>
+              <p class="featured-product__text">
+                These low-profile sneakers are your perfect casual
+                wear companion. Featuring a durable rubber outer sole,
+                they’ll withstand everything the weather can offer.
+              </p>
+            </div>
+            <div class="featured-product__price">
+              <div class="price-wrapper">
+                <span class="featured-product__price--current">
+                  $125.00
+                </span>
+                <span class="featured-product__price--discount">
+                  50%
+                </span>
+              </div>
+              <span class="featured-product__price--original">
+                <s>$250.00</s>
               </span>
             </div>
-            <span class="featured-product__price--original">
-              <s>$250.00</s>
-            </span>
-          </div>
-          <div class="featured-product__actions">
-            <form method="post" action="/cart/add">
-              <div class="quantity">
-                <button type="button" class="icon-decrease">
-                  <span class="sr-only">Decrease quantity</span>
-                </button>
-                <label for="quantity" class="sr-only">Quantity</label>
+            <div class="featured-product__actions">
+              <form method="post" action="/cart/add">
+                <div class="quantity">
+                  <button type="button" class="icon-decrease">
+                    <span class="sr-only">Decrease quantity</span>
+                  </button>
+                  <label for="quantity" class="sr-only"
+                    >Quantity</label
+                  >
+                  <input
+                    type="text"
+                    id="quantity"
+                    name="quantity"
+                    value="0"
+                  />
+                  <button type="button" class="icon-increase">
+                    <span class="sr-only">Increase quantity</span>
+                  </button>
+                </div>
                 <input
-                  type="text"
-                  id="quantity"
-                  name="quantity"
+                  type="hidden"
+                  id="product-id"
+                  name="product-id"
+                  value="Fall Limited Edition Sneakers"
+                />
+                <input
+                  type="hidden"
+                  id="amount"
+                  name="amount"
                   value="0"
                 />
-                <button type="button" class="icon-increase">
-                  <span class="sr-only">Increase quantity</span>
+                <button
+                  id="add-to-cart"
+                  type="submit"
+                  class="btn btn--primary"
+                >
+                  <img
+                    src="images/icon-cart.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  Add to cart
                 </button>
-              </div>
-              <input
-                type="hidden"
-                id="product-id"
-                name="product-id"
-                value="Fall Limited Edition Sneakers"
-              />
-              <input
-                type="hidden"
-                id="amount"
-                name="amount"
-                value="0"
-              />
-              <button
-                id="add-to-cart"
-                type="submit"
-                class="btn btn--primary"
-              >
-                <img
-                  src="images/icon-cart.svg"
-                  alt=""
-                  aria-hidden="true"
-                />
-                Add to cart
-              </button>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </main>
